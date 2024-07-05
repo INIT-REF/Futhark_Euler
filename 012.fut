@@ -3,9 +3,9 @@ def ndivs(n: i32) =
         if n % d == 0 then (n, d + 1, c + 2) else (n, d + 1, c)
     in if d * d == n then c + 1 else c
 
-def trinum =
-    let (tri, _) = loop (tri, n) = (1, 2) while ndivs(tri) <= 500 do
+def trinum(limit: i32) =
+    let (tri, _) = loop (tri, n) = (1, 2) while ndivs(tri) <= limit do
         (tri + n, n + 1)
     in tri
 
-def main = trinum
+def main = trinum(500)
