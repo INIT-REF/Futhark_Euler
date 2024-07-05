@@ -19,13 +19,13 @@ def s: []u8 = "73167176531330624919225119674426574742355349194934" ++
     "05886116467109405077541002256983155200055935729725" ++
     "71636269561882670428252483600823257530420752963450"
 
-def max(a: i32)(b: i32) = if a > b then a else b
+def max(a: i64)(b: i64) = if a > b then a else b
 
 def prod(arr: []u8) = reduce (*) 1i64 (map(\x -> i64.u8(x - 48)) arr)
 
 def maxprod(arr: []u8) =
     let(_, mp) = loop (arr, max) = (arr, 0) while length(arr) >= 13 do
-        let p = prod(take(13) arr) in if p  > max then (tail(arr), p)
+        let p = prod(take(13) arr) in if p > max then (tail(arr), p)
         else (tail(arr), max)
     in mp
 
