@@ -6,8 +6,7 @@ def dickson(r: i32) =
         while 1000 != reduce (+) 0 t do
             if d * d > rsd2(r) then (r + 2, 1, [])
             else if 0 == rsd2(r) % d then (r, d + 1, (tri(r, d, rsd2(r) / d)))
-                else (r, d + 1, t)
+                 else (r, d + 1, t)
     in reduce (*) 1 t
-
 
 def main = dickson(2)
