@@ -1,7 +1,7 @@
 def bigint(n: i64) = let big = replicate n 0u64 in let big[n - 1] = 1 in big
 
 def pow2(p: i32) =
-    loop res = bigint(17) for i in (1...p) do
+    loop res = bigint(17) for _ in (1...p) do
         let (res, _) = loop (res, carry) = (res, 0u64) 
            for j in (16..15...0) do
                 let tmp = carry + (2 * res[j])
