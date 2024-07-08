@@ -17,4 +17,4 @@ def tri: [][]i32 = [[75, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00]
 def max(arr: []i32) = map2(\x y -> if x > y then x else y) arr (rotate 1 arr)
 def sum(a: []i32)(b: []i32) = map2(+) b (max(a))
 
-def main = head(reduce (sum) (replicate 15 0i32) (reverse tri))
+def main = head(reduce (sum) (rep 0) (reverse tri))
