@@ -3,10 +3,10 @@ def rsd2(r: i32) = (r * r) / 2
 
 def dickson(r: i32) =
     let (_, _, t) = loop (r, d, t) = (r, 1, []) 
-        while 1000 != reduce (+) 0 t do
+        while 1000 != i32.sum t do
             if d * d > rsd2(r) then (r + 2, 1, [])
             else if 0 == rsd2(r) % d then (r, d + 1, (tri(r, d, rsd2(r) / d)))
                  else (r, d + 1, t)
-    in reduce (*) 1 t
+    in i32.product t
 
 def main = dickson(2)
