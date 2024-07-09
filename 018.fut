@@ -16,9 +16,6 @@ def tri: [][]i32 = [[75, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00]
 
 def max(arr: []i32) = rotate 1 arr |> map2(\x y -> if x > y then x else y) arr
 def sum(a: []i32)(b: []i32) = max a |> map2 (+) b
-def euler018 = tri
-    |> reverse
-    |> reduce sum (replicate 15 0i32)
-    |> head
+def euler018 = tri |> reverse |> reduce sum (replicate 15 0i32) |> head
 
 def main = euler018
