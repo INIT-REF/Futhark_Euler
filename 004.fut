@@ -6,5 +6,6 @@ def ispal(n: i32) =
     in if n == rev then n else 0
 
 def products(A: []i32) = flatten(map(\a -> map(\b -> a * b) A) A)
+def euler004 = products(100...999) |> map ispal |> reduce max 0
 
-def main = reduce (max) 0 (map(\x -> ispal(x)) (products(100...999)))
+def main = euler004
