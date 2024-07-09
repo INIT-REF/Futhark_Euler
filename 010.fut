@@ -5,11 +5,11 @@ def SoE(limit: i64) =
                 let sieve[m] = false in sieve
             in (s, d + 1)
         else (sieve, d + 1)
-    in res
+    in (zip (indices res) res)[2:]
 
-def sum(s: []bool) =
-    let (_, s) = loop (sieve, s: i64) = (s, 2) for i in (3..5..<2000000) do
-        if sieve[i] then (sieve, s + i) else (sieve, s)
-    in s
+def euler010(limit: i64) = 
+    SoE(limit) 
+        |> map(\(x, y) -> if y then x else 0) 
+        |> i64.sum
 
-def main = sum(SoE(2000000))
+def main = euler010(2000000)
