@@ -5,9 +5,11 @@ def collatz(n: i32) =
 
 def max(n1: i32, l1: i32)(n2: i32, l2: i32) = if l1 > l2 then (n1, l1) else (n2, l2)
 
-def euler014(limit: i32) = 
-    (1..<limit)
-        |> map collatz
-        |> reduce max (0, 0)
+def euler014(limit: i32) =
+    let (res, _) =  
+        (1..<limit)
+            |> map collatz
+            |> reduce max (0, 0)
+    in res
 
-def main = (euler014(1000000)).0
+def main = euler014(1000000)
