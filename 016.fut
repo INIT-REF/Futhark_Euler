@@ -13,5 +13,10 @@ def digitsum(n: u64) =
     let (_, sum) = loop (n, sum) = (n, 0) while n > 0 do
         (n / 10, sum + n % 10)
     in sum
+
+def euler016 = 
+    pow2(1000)
+        |> map digitsum
+        |> reduce (+) 0
                 
-def main = reduce (+) 0 (map(\x -> digitsum(x)) (pow2(1000)))
+def main = euler016
