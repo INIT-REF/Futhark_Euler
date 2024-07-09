@@ -3,6 +3,7 @@ def fib(limit: i32) =
         [arr[0] + arr[1]] ++ arr
     in tail(f)
 
-def even(n: i32) = if 0 == n % 2 then n else 0
+def even(n: i32) = n * (1 ^ n & 1)
+def euler001(limit: i32) = fib(limit) |> map even |> i32.sum
 
-def main = reduce (+) 0 (map(\x -> even(x)) (fib(4000000)))
+def main = euler001(4000000)
