@@ -14,7 +14,11 @@ def tri: [][]i32 = [[75, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00]
                     [63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31, 00],
                     [04, 62, 98, 27, 23, 09, 70, 98, 73, 93, 38, 53, 60, 04, 23]]
 
-def max(arr: []i32) = map2(\x y -> if x > y then x else y) arr (rotate 1 arr)
-def sum(a: []i32)(b: []i32) = map2(+) b (max(a))
+def max(arr: []i32) = rotate 1 arr |> map2(\x y -> if x > y then x else y) arr
+def sum(a: []i32)(b: []i32) = max a |> map2 (+) b
+def euler018 = tri
+    |> reverse
+    |> reduce sum (replicate 15 0i32)
+    |> head
 
-def main = head(reduce (sum) (replicate 15 0i32) (reverse tri))
+def main = euler018
