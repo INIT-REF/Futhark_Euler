@@ -10,7 +10,7 @@ def euler023(limit: i32) =
         for i in abnums limit do loop nabs for j in abnums limit do
             if i + j <= limit 
                 then let nabs[i + j] = false in nabs
-            else nabs
+                else nabs
     in (1...limit) |> map (\x -> if nabs[x] then x else 0) |> i32.sum
 
 def main = euler023(28123)
