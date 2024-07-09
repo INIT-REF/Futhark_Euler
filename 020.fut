@@ -15,6 +15,6 @@ def digitsum(n: u64) =
         (n / 10, sum + n % 10)
     in sum
 
-def euler020 = fact 100 |> map digitsum |> reduce (+) 0
+def euler020 = fact 100 |> map digitsum |> u64.sum
                 
 def main = euler020
