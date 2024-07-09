@@ -14,9 +14,6 @@ def digitsum(n: u64) =
         (n / 10, sum + n % 10)
     in sum
 
-def euler016 = 
-    pow2(1000)
-        |> map digitsum
-        |> reduce (+) 0
+def euler016 = pow2 1000 |> map digitsum |> reduce (+) 0
                 
 def main = euler016
