@@ -5,6 +5,6 @@ def ispd(n: i32) =
         let l[num % 10] = 1 in (l, num / 10)
     in if map2 (==) i2l pd19 |> and then 100002 * n else 0
 
-def euler038 = (9123...9876) |> map ispd |> i32.maximum
+def euler038 = (9234...9487) |> map ispd |> i32.maximum
 
 def main = euler038
